@@ -233,27 +233,27 @@
 //   (e.g., validate data, send via AJAX) without reloading.
 
 // Wait for the document to fully load before running initApp
-document.addEventListener("readystatechange", (event) => {
-    if (event.target.readyState === "complete") {
-        console.log("readyState: complete");
-        initApp();
-    }
-});
+// document.addEventListener("readystatechange", (event) => {
+//     if (event.target.readyState === "complete") {
+//         console.log("readyState: complete");
+//         initApp();
+//     }
+// });
 
-// Listen to the form submit event using addEventListener
-const initApp = () => {
-    // Select the view that contains the form
-    const view3 = document.querySelector("#view3");
+// // Listen to the form submit event using addEventListener
+// const initApp = () => {
+//     // Select the view that contains the form
+//     const view3 = document.querySelector("#view3");
 
-    // Select the form element inside view3
-    const myForm = view3.querySelector("#myForm");
+//     // Select the form element inside view3
+//     const myForm = view3.querySelector("#myForm");
 
-    // Handle the form's submit event
-    myForm.addEventListener("submit", (event) => {
-        event.preventDefault(); // Stop page reload
-        console.log("submit event"); // Custom logic can go here
-    });
-};
+//     // Handle the form's submit event
+//     myForm.addEventListener("submit", (event) => {
+//         event.preventDefault(); // Stop page reload
+//         console.log("submit event"); // Custom logic can go here
+//     });
+// };
 
 
 // Key takeaways from the code:
