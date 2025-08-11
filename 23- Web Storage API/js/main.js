@@ -7,12 +7,12 @@
 
 // eg-1:
 // ->both are same
-// window.alert("Hello")
-// alert("Hello");
+window.alert("Hello")
+alert("Hello");
 
 // eg-2:getting location(local ip address)
-// window.alert(window.location);
-// alert(window.localion);
+window.alert(window.location);
+alert(window.localion);
 
 
 // storage
@@ -46,29 +46,29 @@
 
 // 1. Store Array in sessionStorage
 // eg-1:without JSON.stringify:
-// const myArray=["eat","sleep","code"];
-// // mySessionStorage is name of the session store
-// sessionStorage.setItem("mySessionStore",myArray);
+const myArray=["eat","sleep","code"];
+// mySessionStorage is name of the session store
+sessionStorage.setItem("mySessionStore",myArray);
 
-// // retirving data from session storage
-// const mySessionData=sessionStorage.getItem("mySessionStore");
-// console.log(mySessionData); // Output: "eat,sleep,code"  (string, not array)
-// console.log(typeof mySessionData);//o/p:string
+// retirving data from session storage
+const mySessionData=sessionStorage.getItem("mySessionStore");
+console.log(mySessionData); // Output: "eat,sleep,code"  (string, not array)
+console.log(typeof mySessionData);//o/p:string
 
 // eg-2: with JSON.stringify:
-// const myArray = ["eat", "sleep", "code"];
-// sessionStorage.setItem("myArray", JSON.stringify(myArray));
+const myArray = ["eat", "sleep", "code"];
+sessionStorage.setItem("myArray", JSON.stringify(myArray));
 
-// const mySessionData=sessionStorage.getItem("myArray");
+const mySessionData=sessionStorage.getItem("myArray");
 
-// console.log(mySessionData);
-// //Output: '["eat","sleep","code"]' (JSON string)
-// console.log(typeof mySessionData); //o/p:string
+console.log(mySessionData);
+//Output: '["eat","sleep","code"]' (JSON string)
+console.log(typeof mySessionData); //o/p:string
 
-// // parsing session data
-// const parseSessionData=JSON.parse(mySessionData)
-// console.log(parseSessionData);//o/p: ['eat', 'sleep', 'code']
-// console.log(typeof parseSessionData)//o/p:object
+// parsing session data
+const parseSessionData=JSON.parse(mySessionData)
+console.log(parseSessionData);//o/p: ['eat', 'sleep', 'code']
+console.log(typeof parseSessionData)//o/p:object
 
 
 // 2. Store object in sessionStorage
@@ -84,18 +84,18 @@
 
 
 // eg-1: ❌ Storing an object directly:
-// const myObject = {
-//     name: "Ashish",
-//     hobbies:["eat","sleep","code"],
-//     logName: function() {
-//         console.log(this.name);
-//     }
-// };
+const myObject = {
+    name: "Ashish",
+    hobbies:["eat","sleep","code"],
+    logName: function() {
+        console.log(this.name);
+    }
+};
 
-// sessionStorage.setItem("mySessionStore", myObject);
+sessionStorage.setItem("mySessionStore", myObject);
 
-// const mySessionData = sessionStorage.getItem("mySessionStore");
-// console.log(mySessionData); // Output: [object Object]
+const mySessionData = sessionStorage.getItem("mySessionStore");
+console.log(mySessionData); // Output: [object Object]
 
 // eg-2:✅ How to fix it:
 // JSON.stringify(myObject) converts the object into a JSON-formatted string
@@ -106,30 +106,30 @@
 // -> Methods (functions) are not stored in JSON format.
 
 // Code
-// const myObject = {
-//     name: "Ashish",
-//     hobbies: ["eat", "sleep", "code"],
-//     logName: function () {
-//         console.log(this.name);
-//     }
-// };
+const myObject = {
+    name: "Ashish",
+    hobbies: ["eat", "sleep", "code"],
+    logName: function () {
+        console.log(this.name);
+    }
+};
 
-// // Convert object to JSON before storing
-// sessionStorage.setItem("mySessionStore", JSON.stringify(myObject));
+// Convert object to JSON before storing
+sessionStorage.setItem("mySessionStore", JSON.stringify(myObject));
 
-// // Retrieve string data
-// const mySessionData = sessionStorage.getItem("mySessionStore");
-// console.log(mySessionData); 
-// // o/p: {"name":"Ashish","hobbies":["eat","sleep","code"]}
-// console.log(typeof mySessionData); 
-// // o/p: string
+// Retrieve string data
+const mySessionData = sessionStorage.getItem("mySessionStore");
+console.log(mySessionData); 
+// o/p: {"name":"Ashish","hobbies":["eat","sleep","code"]}
+console.log(typeof mySessionData); 
+// o/p: string
 
-// // Parse string data back to object
-// const parseSessionData = JSON.parse(sessionStorage.getItem("mySessionStore"));
-// console.log(parseSessionData); 
-// // o/p: {name: "Ashish", hobbies: Array(3)}
-// console.log(typeof parseSessionData); 
-// // o/p: object
+// Parse string data back to object
+const parseSessionData = JSON.parse(sessionStorage.getItem("mySessionStore"));
+console.log(parseSessionData); 
+// o/p: {name: "Ashish", hobbies: Array(3)}
+console.log(typeof parseSessionData); 
+// o/p: object
 
 
 // 2. Local Storage Examples
@@ -142,57 +142,57 @@
 //    4. Select your website’s domain to see stored key-value pairs.
 
 // eg-1:
-// const myArray = ["eat", "sleep", "code"];
-// localStorage.setItem("myArray", JSON.stringify(myArray));
+const myArray = ["eat", "sleep", "code"];
+localStorage.setItem("myArray", JSON.stringify(myArray));
 
-// const myLocalData=localStorage.getItem("myArray");
+const myLocalData=localStorage.getItem("myArray");
 
-// console.log(myLocalData);
-// //Output: ["eat","sleep","code"]
-// console.log(typeof myLocalData); //o/p:string
+console.log(myLocalData);
+//Output: ["eat","sleep","code"]
+console.log(typeof myLocalData); //o/p:string
 
-// // parsing session data
-// const parseLocalData=JSON.parse(myLocalData)
-// console.log(parseLocalData);//o/p: ['eat', 'sleep', 'code']
-// console.log(typeof parseLocalData)//o/p:object
+// parsing session data
+const parseLocalData=JSON.parse(myLocalData)
+console.log(parseLocalData);//o/p: ['eat', 'sleep', 'code']
+console.log(typeof parseLocalData)//o/p:object
 
-// ->this storages work while doing small projects.
+->this storages work while doing small projects.
 
 
 
 //eg-2: Remove item from local storage
 
-// const myArray = ["eat", "sleep", "code"];
+const myArray = ["eat", "sleep", "code"];
 
-// // Store array in local storage (must stringify for non-string data)
-// localStorage.setItem("myArray", JSON.stringify(myArray));
+// Store array in local storage (must stringify for non-string data)
+localStorage.setItem("myArray", JSON.stringify(myArray));
 
-// // Remove specific item from local storage
-// // localStorage.removeItem("myArray");
+// Remove specific item from local storage
+// localStorage.removeItem("myArray");
 
-// // Clear ALL data from local storage (no arguments needed)
-// // localStorage.clear();
+// Clear ALL data from local storage (no arguments needed)
+// localStorage.clear();
 
-// // Try to retrieve the removed/cleared data
-// const myLocalData = localStorage.getItem("myArray");
+// Try to retrieve the removed/cleared data
+const myLocalData = localStorage.getItem("myArray");
 
-// console.log(myLocalData); // null (if removed or cleared)
+console.log(myLocalData); // null (if removed or cleared)
 
 
 // eg-3: Accessing items in Local Storage using index
 
-// const myArray = ["eat", "sleep", "code"];
+const myArray = ["eat", "sleep", "code"];
 
-// // Store the array in localStorage
-// localStorage.setItem("myArray", JSON.stringify(myArray));
+// Store the array in localStorage
+localStorage.setItem("myArray", JSON.stringify(myArray));
 
-// // Get the key name stored at index 0
-// const key = localStorage.key(0);
-// console.log(key); // o/p: myArray
+// Get the key name stored at index 0
+const key = localStorage.key(0);
+console.log(key); // o/p: myArray
 
-// // Retrieve the value using the key
-// const myLocalData = localStorage.getItem(key);
-// console.log(myLocalData); // o/p: ["eat","sleep","code"]
+// Retrieve the value using the key
+const myLocalData = localStorage.getItem(key);
+console.log(myLocalData); // o/p: ["eat","sleep","code"]
 
 
 
