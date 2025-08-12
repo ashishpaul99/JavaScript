@@ -167,12 +167,12 @@ const users=fetch("http://jsonplaceholder.typicode.com/users");;
 // it gives the state of the promise -> pending
 console.log(users); //o/p:Promise {<pending>
 
-The response is a ReadableStream, but we need JSON to work with.
+// The response is a ReadableStream, but we need JSON to work with.
 fetch("http://jsonplaceholder.typicode.com/users").then(response=>{
     console.log(response);
 })
 
-calling json method od that redable stream.
+// calling json method od that redable stream.
 fetch("http://jsonplaceholder.typicode.com/users").then(response=>{
     return response.json();
 }).then(data=>{
